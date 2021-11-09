@@ -18,3 +18,10 @@ interface INiftyRegistry {
      */
     function isValidNiftySender(address sending_key) external view returns (bool);
 }
+
+/**
+ * @dev Nifty registry migration list
+ */
+interface INiftyTokenList {
+    function isNiftyToken(address tokenAddress) external view returns(bool);
+}

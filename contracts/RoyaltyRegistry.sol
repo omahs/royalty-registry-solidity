@@ -80,6 +80,15 @@ contract RoyaltyRegistry is ERC165, OwnableUpgradeable, IRoyaltyRegistry {
             } catch {}
         } catch {}
 
+        // Nifty Gateway migration override
+        try INiftyTokenList(0xF4bb693f9d79c23B6a3f405AAc0f3E8399cbA856).isNiftyToken(tokenAddress) returns (bool isNiftyToken) {
+            if (isNiftyToken) {
+                try INiftyRegistry(0xCefBf44ff649B6E0Bc63785699c6F1690b8cF73b).isValidNiftySender(_msgSender()) returns (bool valid) {
+                    return valid;
+                } catch {}
+            }
+        } catch {}
+
         // OpenSea overrides
         // Tokens already support Ownable
 
