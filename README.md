@@ -21,7 +21,7 @@ The Royalty Registry is comprised of two components.
 
 ### 1. Royalty Registry
 This is the central contract to be used for determining what address should be used for royalty lookup given a token address.
-The reason that this registry is necessary is to provide backwards compatability with contracts created prior to any on-chain royalty specs.
+The reason that this registry is necessary is to provide backwards compatibility with contracts created prior to any on-chain royalty specs.
 It provides the ability for these contracts to set up an on-chain royalty override with support for:
 - @openzeppelin Ownable
 - @openzepplin AccessControl (DEFAULT_ADMIN_ROLE)
